@@ -1,34 +1,10 @@
 const initialStateValue = {
-  Email: "",
-  Subject: "",
-  Massage: "",
-  Key: 0,
+  Key: 1,
   inboxMassages: [],
 };
 
 const actionCreators = (state = initialStateValue, action) => {
   switch (action.type) {
-    case "Email":
-      return {
-        ...state,
-        Email: action.payload,
-      };
-      break;
-
-    case "Subject":
-      return {
-        ...state,
-        Subject: action.payload,
-      };
-      break;
-
-    case "Massage":
-      return {
-        ...state,
-        Massage: action.payload,
-      };
-      break;
-
     case "inboxMassages":
       return {
         ...state,
@@ -45,7 +21,14 @@ const actionCreators = (state = initialStateValue, action) => {
         ],
       };
       break;
-
+      
+      case "UpdateKey":
+        return {
+          ...state,
+        Key: state.Key + 1,
+      };
+      break;
+      
     default:
       break;
   }
